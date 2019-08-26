@@ -9,27 +9,25 @@
             
             <b-list-group>
                 <b-list-group-item
-                    v-for="(answer, index) in answers"
-                    :key="index"
-                    @click="selectAnswer(index)"
-                    :class="answerClass(index)"
+                        v-for="(answer, index) in answers"
+                        :key="index"
+                        @click="selectAnswer(index)"
+                        :class="answerClass(index)"
                 >
                     {{ answer }}
                 </b-list-group-item>
             </b-list-group>
             
             <b-button
-                variant="primary"
-                @click="submitAnswer"
-                :disabled="selectedIndex === null || answered"
+                    variant="primary"
+                    @click="submitAnswer"
+                    :disabled="selectedIndex === null || answered"
             >
                 Submit
             </b-button>
-            <b-button
-                variant="success"
-                @click="next"
-            >
-                Next
+            <b-button variant="success" href="#"
+                      @click="next"
+            >Next
             </b-button>
         </b-jumbotron>
     </div>
@@ -88,14 +86,8 @@
 
                 this.increment(isCorrect)
             },
-            classChange() {
-                if (!this.answered) {
-                    answerClass()
-                }
-            },
             answerClass(index) {
                 let answerClass = ''
-
                 if (!this.answered && this.selectedIndex === index) {
                     answerClass = 'selected'
                 } else if (this.answered && this.correctIndex === index) {
