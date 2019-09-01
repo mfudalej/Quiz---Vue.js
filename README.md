@@ -1,4 +1,6 @@
-# quiz
+# Quiz App - my first app in Vue.js
+
+Live: https://quiz-vue-js.onrender.com
 
 ## Project setup
 ```
